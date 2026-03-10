@@ -1,27 +1,35 @@
-import {defineType, defineField} from 'sanity'
+import { defineType, defineField } from 'sanity'
 
 export const settings = defineType({
   name: 'settings',
-  title: 'Site Settings',
+  title: 'Settings',
   type: 'document',
 
   fields: [
     defineField({
-      name: 'siteTitle',
-      title: 'Site title',
-      type: 'string'
+      name: 'favicon',
+      title: 'Favicon',
+      type: 'image',
+      description: 'Global icon for the website. Must be square PNG image.',
+      options: { hotspot: false }
     }),
-
     defineField({
       name: 'seo',
-      title: 'Default SEO',
-      type: 'seo'
-    }),
-
-    defineField({
-      name: 'footerText',
-      title: 'Footer text',
-      type: 'string'
+      title: 'Global SEO',
+      type: 'seo',
+      description: 'SEO settings applied globally across the site'
     })
-  ]
+  ],
+
+  preview: {
+    select: {
+      media: 'favicon'
+    },
+    prepare() {
+      return {
+        title: 'Settings',
+        media: undefined
+      }
+    }
+  }
 })

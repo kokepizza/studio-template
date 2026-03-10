@@ -6,23 +6,28 @@ export const page = defineType({
   type: 'document',
 
   fields: [
+
     defineField({
       name: 'title',
       title: 'Title',
-      type: 'string'
+      type: 'string',
     }),
 
     defineField({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
-      options: {source: 'title'}
+      options: {
+        source: 'title'
+      },
     }),
 
     defineField({
       name: 'seo',
-      title: 'SEO',
-      type: 'seo'
+      title: 'Page SEO',
+      type: 'seo',
+      description: 'SEO settings for this page. If empty, the global SEO from Settings should be used.'
     })
+
   ]
 })

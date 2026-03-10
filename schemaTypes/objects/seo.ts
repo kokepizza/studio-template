@@ -6,22 +6,35 @@ export const seo = defineType({
   type: 'object',
 
   fields: [
+
     defineField({
-      name: 'metaTitle',
-      title: 'Meta title',
-      type: 'string'
+      name: 'title',
+      title: 'SEO Title',
+      type: 'string',
+      description: 'Title used for search engines and browser tabs'
     }),
 
     defineField({
-      name: 'metaDescription',
-      title: 'Meta description',
-      type: 'text'
+      name: 'description',
+      title: 'SEO Description',
+      type: 'text',
+      description: 'Description used for search engine results and social previews'
     }),
 
     defineField({
-      name: 'shareImage',
-      title: 'Share image',
-      type: 'image'
-    })
+      name: 'keywords',
+      title: 'SEO Keywords',
+      type: 'string',
+      description: 'Separate keywords with comma and space. Ex: design, creative studio, branding'
+    }),
+
+    defineField({
+      name: 'ogImage',
+      title: 'Open Graph Image',
+      type: 'image',
+      description: 'Image used when shared on Social Media platforms.',
+      options: { hotspot: true }
+    }),
+
   ]
 })
