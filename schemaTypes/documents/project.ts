@@ -1,11 +1,13 @@
 import { defineType, defineField } from 'sanity'
+import { seo } from '../objects/seo'
+import { richText } from '../objects/richText'
 
 export const project = defineType({
   name: 'project',
   title: 'Project',
   type: 'document',
-  fields: [
 
+  fields: [
     defineField({
       name: 'title',
       title: 'Title',
@@ -23,18 +25,23 @@ export const project = defineType({
       name: 'summary',
       title: 'Summary',
       type: 'text',
-      description: 'Short description of the project'
+      description: 'Short description of the project',
     }),
 
     defineField({
-    name: 'category',
-    title: 'Category',
-    type: 'reference',
-    to: [{ type: 'category' }],
-    description: 'Select the category for this project',
-    options: {
-        disableNew: false
-    }
+      name: 'category',
+      title: 'Category',
+      type: 'reference',
+      to: [{ type: 'category' }],
+      description: 'Select the category for this project',
+      options: { disableNew: false },
+    }),
+
+    defineField({
+      name: 'thumbnail',
+      title: 'Thumbnail Image',
+      type: 'image',
+      options: { hotspot: true },
     }),
 
     defineField({
@@ -42,30 +49,29 @@ export const project = defineType({
       title: 'Project Images',
       type: 'array',
       of: [{ type: 'image', options: { hotspot: true } }],
-      description: 'The first image will be used as the thumbnail for the project listing page.'
+      description: 'All images for this project.',
     }),
 
     defineField({
       name: 'content',
       title: 'Content',
       type: 'richText',
-      description: 'Main content of the project'
+      description: 'Main content of the project',
     }),
 
     defineField({
       name: 'seo',
       title: 'Project SEO',
       type: 'seo',
-      description: 'SEO settings for this project. If empty, global SEO will be used.'
-    })
-
+      description: 'If empty, global SEO will be used.',
+    }),
   ],
 
   preview: {
     select: {
       title: 'title',
-      media: 'projectImages.0',
+      media: 'thumbnail',
       subtitle: 'category.title',
-    }
-  }
+    },
+  },
 })
