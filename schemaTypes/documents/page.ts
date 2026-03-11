@@ -10,7 +10,7 @@ export const page = defineType({
     defineField({
       name: 'title',
       title: 'Title',
-      type: 'string',
+      type: 'localeString',
     }),
 
     defineField({
@@ -28,6 +28,17 @@ export const page = defineType({
       type: 'seo',
       description: 'SEO settings for this page. If empty, the global SEO from Settings should be used.'
     })
-
-  ]
+  ],
+  preview: {
+    select: {
+      titleCa: 'title.ca',
+      titleEs: 'title.es',
+      titleEn: 'title.en'
+    },
+    prepare({ titleCa, titleEs, titleEn }) {
+      return {
+        title: titleCa || titleEs || titleEn || 'Untitled'
+      }
+    }
+  }
 })

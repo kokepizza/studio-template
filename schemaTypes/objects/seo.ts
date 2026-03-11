@@ -10,21 +10,21 @@ export const seo = defineType({
     defineField({
       name: 'title',
       title: 'SEO Title',
-      type: 'string',
+      type: 'localeString',
       description: 'Title used for search engines and browser tabs'
     }),
 
     defineField({
       name: 'description',
       title: 'SEO Description',
-      type: 'text',
+      type: 'localeText',
       description: 'Description used for search engine results and social previews'
     }),
 
     defineField({
       name: 'keywords',
       title: 'SEO Keywords',
-      type: 'string',
+      type: 'localeString',
       description: 'Separate keywords with comma and space. Ex: design, creative studio, branding'
     }),
 

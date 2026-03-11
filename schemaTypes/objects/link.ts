@@ -9,7 +9,7 @@ export const link = defineType({
     defineField({
       name: 'label',
       title: 'Label',
-      type: 'string',
+      type: 'localeString',
       description: 'Text to display for the link'
     }),
 

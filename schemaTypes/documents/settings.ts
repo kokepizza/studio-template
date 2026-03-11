@@ -6,6 +6,14 @@ export const settings = defineType({
   type: 'document',
 
   fields: [
+
+    defineField({
+      name: 'title',
+      type: 'string',
+      initialValue: 'Settings',
+      hidden: true,
+    }),
+
     defineField({
       name: 'favicon',
       title: 'Favicon',
@@ -13,6 +21,7 @@ export const settings = defineType({
       description: 'Global icon for the website. Must be square PNG image.',
       options: { hotspot: false }
     }),
+
     defineField({
       name: 'seo',
       title: 'Global SEO',
@@ -20,16 +29,4 @@ export const settings = defineType({
       description: 'SEO settings applied globally across the site'
     })
   ],
-
-  preview: {
-    select: {
-      media: 'favicon'
-    },
-    prepare() {
-      return {
-        title: 'Settings',
-        media: undefined
-      }
-    }
-  }
 })
