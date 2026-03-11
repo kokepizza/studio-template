@@ -19,14 +19,12 @@ A clean and ready-to-use **Sanity Studio template** with support for categories,
 
 1. **Install dependencies**
 
-```bash
 npm install
 # or
 yarn install
 
 2. **Run the Studio locally**
 
-```bash
 npm run dev
 # or
 yarn dev
@@ -43,7 +41,7 @@ Check out Sanity Deployment Docs￼ for deploying to Vercel, Netlify, or Sanity�
 
 /schemas       # All content schemas: categories, projects, services, settings, SEO
 /documents     # The schemas that appear in the sidebar.
-/objects       # Personalized schemas for translation,SEO and other.
+/objects       # Personalized schemas for translation, SEO and other.
 
 ## 🔌 Extending the Studio
 
