@@ -19,15 +19,15 @@ A clean and ready-to-use **Sanity Studio template** with support for categories,
 
 1. **Install dependencies**
 
-npm install
-or
-yarn install
+	•	npm install
+	•	or
+	•	yarn install
 
 2. **Run the Studio locally**
 
-npm run dev
-or
-yarn dev
+	•	npm run dev
+	•	or
+	•	yarn dev
 
 Open http://localhost:3333￼ in your browser to access the Studio.
 
